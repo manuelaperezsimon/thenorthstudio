@@ -1,0 +1,42 @@
+name: Code audit
+
+on: push
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    name: Code audit
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Check if .editorconfig exists
+        uses: andstor/file-existence-action@v1
+        with:
+          files: ".editorconfig"
+          allow_failure: true
+
+      - name: EditorConfig validation
+        uses: snow-actions/eclint@v1.0.1
+
+      - name: Ensure node_modules is ignored by Git
+        uses: dkershner6/gitignore-parser@v1
+        with:
+          must_deny: "node_modules"
+
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm
+
+      - name: Install modules using pnpm
+        run: pnpm install
+
+      - name: Check commit message length
+        uses: gsactions/commit-message-checker@v1
+        with:
+          pattern: "^[^#].{10,74}"
+          error: "The commit message length must be between 10 and 74"
+          excludeDescription: "true"
+          excludeTitle: "true"
+          checkAllCommitMessages: "true"

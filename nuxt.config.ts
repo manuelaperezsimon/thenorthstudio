@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
   devtools: { enabled: true },
   vite: {
     server: {
@@ -12,5 +13,11 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  googleFonts: {
+    families: {
+      "Frank Ruhl Libre": [400, 500, 600, 700],
+    },
+    display: "swap",
   },
 });

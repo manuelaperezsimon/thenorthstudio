@@ -11,11 +11,16 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@nuxtjs/google-fonts": "^3.2.0",
     "nuxt": "^3.13.2",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "husky": "^8.0.0"
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "autoprefixer": "^10.4.20",
+    "husky": "^8.0.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14"
   }
 }

@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Urban Grotesk Medium";
+  src: url("/assets/fonts/UrbanGroteskMeBl-Regular.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urban Grotesk Bold";
+  src: url("/assets/fonts/UrbanGroteskReBo-Regular.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
